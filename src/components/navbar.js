@@ -19,10 +19,10 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-white shadow-lg mt-2">
+    <Disclosure as="nav" className="bg-white shadow-lg mt-8">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-auto shadow-lg max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -36,12 +36,12 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start font-signature text-xl md:text-5xl pb-4 text-green-500">
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start font-signature text-xl md:text-5xl pb-4 text-green-500 bg-white">
                 <Link href="/">
                   <div className="flex flex-shrink-0 items-center">Gocingo</div>
                 </Link>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4 items-center justify-between">
+                  <div className="flex space-x-8 items-center justify- ml-32">
                     <Link
                       href="/"
                       className="text-black leading-6 px-3 pt-4 text-sm font-semibold"

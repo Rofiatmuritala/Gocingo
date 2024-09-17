@@ -24,10 +24,10 @@ function Hero() {
     <>
       <div className="bg-white text-center">
         <section>
-          <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-6xl ">
-            <div class="flex w-full mx-auto text-left">
-              <div class="relative inline-flex items-center mx-auto align-middle py-2 px-4 lg:pt-10 sm:px-6 lg:px-8">
-                <div class="text-center">
+          <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-6xl ">
+            <div className="flex w-full mx-auto text-left">
+              <div className="relative inline-flex items-center mx-auto align-middle py-2 px-4 lg:pt-10 sm:px-6 lg:px-8">
+                <div className="text-center">
                   <h1 className="text-3xl pt-24 lg:pt-8 font-extrabold tracking-tight text-black sm:text-5xl lg:text-5xl">
                     Making a Difference
                   </h1>
@@ -36,8 +36,8 @@ function Hero() {
                     change in communities around the world. Join us in our
                     mission to make a positive impact.
                   </p>
-                  <div class="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6">
-                    <div class="mt-3 rounded-lg sm:mt-0">
+                  <div className="flex justify-center w-full max-w-2xl gap-2 mx-auto mt-6">
+                    <div className="mt-3 rounded-lg sm:mt-0">
                       <Link
                         href="/donate"
                         className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-lime-500 hover:bg-green-600"
@@ -45,7 +45,7 @@ function Hero() {
                         Donate Now
                       </Link>
                     </div>
-                    <div class="mt-3 rounded-lg sm:mt-0 sm:ml-3">
+                    <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
                       <Link
                         href="/projects"
                         className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-lime-500 hover:bg-green-600"

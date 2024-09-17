@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const projects = [
@@ -81,7 +80,6 @@ const categories = [
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filter, setFilter] = useState("all");
-  const router = useRouter;
   const filteredProjects = projects.filter((project) => {
     const categoryMatch =
       activeCategory === "All" || project.category === activeCategory;
@@ -89,8 +87,7 @@ function Projects() {
     return categoryMatch && statusMatch;
   });
 
-  const displayedProjects =
-    router.pathname === "/" ? filteredProjects.slice(0, 3) : filteredProjects;
+  const displayedProjects = filteredProjects;
 
   return (
     <div className="bg-white min-h-screen">
@@ -105,60 +102,56 @@ function Projects() {
           </p>
         </div>
 
-        {router.pathname === "/projects" && (
-          <div className="mt-12">
-            <div className="flex flex-wrap  justify-center space-y-2 space-x-2 overflow-x-auto">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`whitespace-nowrap px-4 py-2 rounded-md transition-colors duration-300 ${
-                    activeCategory === category
-                      ? "bg-lime-500 text-white"
-                      : "bg-white text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+        <div className="mt-12">
+          <div className="flex flex-wrap  justify-center space-y-2 space-x-2 overflow-x-auto">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`whitespace-nowrap px-4 py-2 rounded-md transition-colors duration-300 ${
+                  activeCategory === category
+                    ? "bg-lime-500 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-200"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-        )}
+        </div>
 
-        {router.pathname === "/projects" && (
-          <div className="mt-8 flex justify-center space-x-4">
-            <button
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-md transition-colors duration-300 ${
-                filter === "all"
-                  ? "bg-lime-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              All Projects
-            </button>
-            <button
-              onClick={() => setFilter("ongoing")}
-              className={`px-4 py-2 rounded-md transition-colors duration-300 ${
-                filter === "ongoing"
-                  ? "bg-lime-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Ongoing
-            </button>
-            <button
-              onClick={() => setFilter("completed")}
-              className={`px-4 py-2 rounded-md transition-colors duration-300 ${
-                filter === "completed"
-                  ? "bg-lime-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Completed
-            </button>
-          </div>
-        )}
+        <div className="mt-8 flex justify-center space-x-4">
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-4 py-2 rounded-md transition-colors duration-300 ${
+              filter === "all"
+                ? "bg-lime-500 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            All Projects
+          </button>
+          <button
+            onClick={() => setFilter("ongoing")}
+            className={`px-4 py-2 rounded-md transition-colors duration-300 ${
+              filter === "ongoing"
+                ? "bg-lime-500 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Ongoing
+          </button>
+          <button
+            onClick={() => setFilter("completed")}
+            className={`px-4 py-2 rounded-md transition-colors duration-300 ${
+              filter === "completed"
+                ? "bg-lime-500 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Completed
+          </button>
+        </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {displayedProjects.map((project) => (
@@ -193,17 +186,6 @@ function Projects() {
             </div>
           ))}
         </div>
-
-        {router.pathname === "/" && (
-          <div className="mt-12 text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-lime-600 hover:bg-lime-700"
-            >
-              View All Projects
-            </Link>
-          </div>
-        )}
       </div>
     </div>
   );
