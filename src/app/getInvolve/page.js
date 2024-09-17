@@ -1,5 +1,10 @@
 import GetInvolve from "@/components/getInvolve";
-import React from "react";
+
+// SEO Meta Data
+export const metadata = {
+  title: "Gocingo NGO - Get Involve",
+  description: "Join our team of change makers",
+};
 
 function page() {
   return (

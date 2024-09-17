@@ -1,5 +1,9 @@
 import Contact from "@/components/contact";
-import React from "react";
+
+export const metadata = {
+  title: "Gocingo NGO - Contact Us",
+  description: "We'd love to hear from you!",
+};
 
 export default function page() {
   return (

@@ -2,9 +2,11 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import "./globals.css";
 
+// SEO Meta Data
 export const metadata = {
-  title: "NGO Website",
-  description: "",
+  title: "Gocingo NGO",
+  description:
+    "Our NGO is dedicated to improving lives and creating lasting change in communities around the world. Join us in our mission to make a positive impact.",
 };
 
 export default function RootLayout({ children }) {

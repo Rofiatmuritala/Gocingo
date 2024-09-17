@@ -1,5 +1,10 @@
 import About from "@/components/about";
-import React from "react";
+
+// SEO Meta Data
+export const metadata = {
+  title: "Gocingo NGO - About Us",
+  description: "Learn about our mission, values, and the team behind our work.",
+};
 
 function page() {
   return (
