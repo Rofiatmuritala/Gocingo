@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const projects = [
@@ -80,6 +81,7 @@ const categories = [
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filter, setFilter] = useState("all");
+  const router = useRouter;
   const filteredProjects = projects.filter((project) => {
     const categoryMatch =
       activeCategory === "All" || project.category === activeCategory;
@@ -88,7 +90,7 @@ function Projects() {
   });
 
   const displayedProjects =
-    location.pathname === "/" ? filteredProjects.slice(0, 3) : filteredProjects;
+    router.pathname === "/" ? filteredProjects.slice(0, 3) : filteredProjects;
 
   return (
     <div className="bg-white min-h-screen">
@@ -103,7 +105,7 @@ function Projects() {
           </p>
         </div>
 
-        {location.pathname === "/projects" && (
+        {router.pathname === "/projects" && (
           <div className="mt-12">
             <div className="flex flex-wrap  justify-center space-y-2 space-x-2 overflow-x-auto">
               {categories.map((category) => (
@@ -123,7 +125,7 @@ function Projects() {
           </div>
         )}
 
-        {location.pathname === "/projects" && (
+        {router.pathname === "/projects" && (
           <div className="mt-8 flex justify-center space-x-4">
             <button
               onClick={() => setFilter("all")}
@@ -192,7 +194,7 @@ function Projects() {
           ))}
         </div>
 
-        {location.pathname === "/" && (
+        {router.pathname === "/" && (
           <div className="mt-12 text-center">
             <Link
               href="/projects"
