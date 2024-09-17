@@ -1,10 +1,10 @@
-import GetInvolve from "@/components/getInvolve";
+import Projects from "@/components/projects";
 import React from "react";
 
 function page() {
   return (
     <div>
-      <GetInvolve />
+      <Projects />
     </div>
   );
 }

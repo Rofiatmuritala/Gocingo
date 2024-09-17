@@ -1,7 +1,12 @@
+import DonateForm from "@/components/donate";
 import React from "react";
 
 function page() {
-  return <div>Donate to our cause</div>;
+  return (
+    <div>
+      <DonateForm />
+    </div>
+  );
 }
 
 export default page;
